@@ -1,3 +1,7 @@
+output "resource_policy_exemptions_id" {
+  description = "Map of id values across all resource_policy_exemptions, keyed the same as var.resource_policy_exemptions"
+  value       = { for k, v in azurerm_resource_policy_exemption.resource_policy_exemptions : k => v.id }
+}
 output "resource_policy_exemptions_description" {
   description = "Map of description values across all resource_policy_exemptions, keyed the same as var.resource_policy_exemptions"
   value       = { for k, v in azurerm_resource_policy_exemption.resource_policy_exemptions : k => v.description }
